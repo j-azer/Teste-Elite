@@ -1,26 +1,26 @@
-# Teste-Elite
+# Teste Elite
 
-<h2>Descrição Geral</h2>
+<h3>Descrição Geral</h3>
 
 Desenvolver uma aplicação web que autentique usuários (professores), permita o upload de arquivos Excel contendo notas de alunos, salve os dados no MSSQL Server e gerencie esses arquivos. A aplicação deve fornecer funcionalidades de visualização, incluindo cálculos de médias e estatísticas, além de funcionalidades adicionais para avaliação.
 
-<h2>Requisitos da Aplicação</h2>
+<h3>Requisitos da Aplicação</h3>
   
-<h3>1. Autenticação de Usuários</h3>
+<h4>1. Autenticação de Usuários</h4>
 
 Descrição: Implementar um sistema de autenticação onde os usuários podem se registrar e fazer login.
 Tecnologias: ASP.NET Core Identity
 Pontuação: 15 pontos
 O que estamos testando: Capacidade de implementar e configurar um sistema de autenticação, incluindo registro e login, que é uma funcionalidade essencial em quase todas as aplicações web.
   
-<h3>2. Upload de Arquivos Excel</h3>
+<h4>2. Upload de Arquivos Excel</h4>
 
 Descrição: Permitir que usuários façam upload de arquivos Excel. Os dados devem ser armazenados no MSSQL Server.
 Tecnologias: ASP.NET Core MVC, Entity Framework Core, ClosedXML ou similar (para leitura de arquivos Excel)
 Pontuação: 20 pontos
 O que estamos testando: Habilidade em lidar com uploads de arquivos, processamento de dados de Excel e integração com banco de dados.
 
-<h3>3. Gerenciamento de Arquivos</h3>
+<h4>3. Gerenciamento de Arquivos</h4>
 Descrição: Implementar funcionalidades para gerenciar arquivos carregados, incluindo adicionar thumbnails e descrições.
 Tecnologias: ASP.NET Core MVC, Entity Framework Core
 Pontuação: 15 pontos
