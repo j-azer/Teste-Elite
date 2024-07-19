@@ -7,12 +7,11 @@ Desenvolver uma aplicação web que autentique usuários (professores), permita 
 <h2>Requisitos da Aplicação</h2>
   
 <h3>1. Autenticação de Usuários</h3>
-<p>
+
 Descrição: Implementar um sistema de autenticação onde os usuários podem se registrar e fazer login.
 Tecnologias: ASP.NET Core Identity
 Pontuação: 15 pontos
 O que estamos testando: Capacidade de implementar e configurar um sistema de autenticação, incluindo registro e login, que é uma funcionalidade essencial em quase todas as aplicações web.
-<p>
   
 <h3>2. Upload de Arquivos Excel</h3>
 
@@ -20,25 +19,26 @@ Descrição: Permitir que usuários façam upload de arquivos Excel. Os dados de
 Tecnologias: ASP.NET Core MVC, Entity Framework Core, ClosedXML ou similar (para leitura de arquivos Excel)
 Pontuação: 20 pontos
 O que estamos testando: Habilidade em lidar com uploads de arquivos, processamento de dados de Excel e integração com banco de dados.
-3. Gerenciamento de Arquivos
+
+<h3>3. Gerenciamento de Arquivos</h3>
 Descrição: Implementar funcionalidades para gerenciar arquivos carregados, incluindo adicionar thumbnails e descrições.
 Tecnologias: ASP.NET Core MVC, Entity Framework Core
 Pontuação: 15 pontos
 O que estamos testando: Competência em criar funcionalidades CRUD (Create, Read, Update, Delete) e manipulação de dados no banco.
 
-4. Rastreio de Uploads e Downloads
+<h3>4. Rastreio de Uploads e Downloads</h3>
 Descrição: O sistema deve rastrear quando um arquivo foi carregado e quantas vezes foi baixado.
 Tecnologias: Entity Framework Core
 Pontuação: 10 pontos
 O que estamos testando: Capacidade de implementar funcionalidades de auditoria e rastreamento, importante para monitoramento e análise de uso.
 
-5. Visualização de Dados
+<h3>5. Visualização de Dados</h3>
 Descrição: Ao clicar para visualizar o conteúdo do arquivo, o sistema deve ler os dados do arquivo Excel, calcular a média das notas dos alunos e demonstrar a média geral da sala.
 Tecnologias: ASP.NET Core MVC, ClosedXML ou similar
 Pontuação: 20 pontos
 O que estamos testando: Habilidade em processamento de dados e apresentação de resultados de maneira compreensível e útil.
 
-6. Design e Documentação
+<h3>6. Design e Documentação</h3>
 Descrição: Apresentar o diagrama do banco de dados, diagrama de fluxo de dados e documentação detalhada.
 Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word/Markdown
 Pontuação: 20 pontos
