@@ -1,7 +1,7 @@
 # Teste-Elite
 <br>
 Descrição Geral
-Desenvolver uma aplicação web que autentique usuários (professores), permita o upload de arquivos Excel contendo notas de alunos, salve os dados no MSSQL Server e gerencie esses arquivos. A aplicação deve fornecer funcionalidades de visualização, incluindo cálculos de médias e estatísticas, além de funcionalidades adicionais para avaliação.
+</P>Desenvolver uma aplicação web que autentique usuários (professores), permita o upload de arquivos Excel contendo notas de alunos, salve os dados no MSSQL Server e gerencie esses arquivos. A aplicação deve fornecer funcionalidades de visualização, incluindo cálculos de médias e estatísticas, além de funcionalidades adicionais para avaliação.
 Requisitos da Aplicação
 1. Autenticação de Usuários
 Descrição: Implementar um sistema de autenticação onde os usuários podem se registrar e fazer login.
