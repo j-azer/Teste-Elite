@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Projeto_Elite.Models.Disciplina>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProfessor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.NomeProfessor)
+            </td>
+            <td>
+                    <a href="@Url.Action("Index", "Aluno", new { disciplinaId = item.Id })">Listagem Aluno</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

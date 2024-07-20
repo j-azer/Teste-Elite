@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Projeto_Elite.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Alunos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                Media
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                    @item.Media()
+            </td>
+        </tr>
+        
+        
+}
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="background-color:lightgray">
+            <td>
+                <b>Média da Turma</b>
+            </td>
+            <td>
+                <b>@(Model.Sum(x => x.Media()) / Model.Count())</b>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
