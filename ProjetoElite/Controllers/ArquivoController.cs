@@ -110,19 +110,19 @@ namespace Projeto_Elite.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao")] Arquivo arquivo)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao")] Arquivo arquivo)
         {
             if (id != arquivo.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
                 try
                 {
-                    _context.Update(arquivo);
+                    var arquivoOriginal = await _context.Arquivo.FindAsync(id);
+                    arquivoOriginal.Descricao = arquivo.Descricao;
+                    _context.Update(arquivoOriginal);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -137,8 +137,6 @@ namespace Projeto_Elite.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
-            return View(arquivo);
         }
 
         // GET: Arquivo/Delete/5
