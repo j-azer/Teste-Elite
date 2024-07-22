@@ -28,7 +28,7 @@ namespace Projeto_Elite.Controllers
             return View(await _context.Arquivo.ToListAsync());
         }
 
-        // GET: Arquivo/Details/5
+        // GET: Arquivo/Details
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -53,14 +53,11 @@ namespace Projeto_Elite.Controllers
         }
 
         // POST: Arquivo/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Descricao")] Arquivo arquivo, IFormFile file)
         {
                 string wwwRootPath = _hostEnvironment.WebRootPath;
-                //string fileName = Path.GetFileNameWithoutExtension(arquivo.Nome);
                 string[] fileSplit = file.FileName.Split(".");
                 arquivo.Nome = fileSplit[0] + DateTime.Now.ToString("yymmssfff") + "." + fileSplit[1];
                 string path = Path.Combine(wwwRootPath + "/Uploads/", arquivo.Nome);
@@ -90,7 +87,7 @@ namespace Projeto_Elite.Controllers
 
         }
 
-        // GET: Arquivo/Edit/5
+        // GET: Arquivo/Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -106,9 +103,7 @@ namespace Projeto_Elite.Controllers
             return View(arquivo);
         }
 
-        // POST: Arquivo/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Arquivo/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao")] Arquivo arquivo)
@@ -139,7 +134,7 @@ namespace Projeto_Elite.Controllers
                 return RedirectToAction(nameof(Index));
         }
 
-        // GET: Arquivo/Delete/5
+        // GET: Arquivo/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -157,7 +152,7 @@ namespace Projeto_Elite.Controllers
             return View(arquivo);
         }
 
-        // POST: Arquivo/Delete/5
+        // POST: Arquivo/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
