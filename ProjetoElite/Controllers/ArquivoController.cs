@@ -62,7 +62,7 @@ namespace Projeto_Elite.Controllers
                 string wwwRootPath = _hostEnvironment.WebRootPath;
                 //string fileName = Path.GetFileNameWithoutExtension(arquivo.Nome);
                 string[] fileSplit = file.FileName.Split(".");
-                arquivo.Nome = fileSplit[0] + DateTime.Now.ToString("yymmssfff") + "." +fileSplit[1];
+                arquivo.Nome = fileSplit[0] + DateTime.Now.ToString("yymmssfff") + "." + fileSplit[1];
                 string path = Path.Combine(wwwRootPath + "/Uploads/", arquivo.Nome);
 
                 using (var fileStream = new FileStream(path, FileMode.Create))

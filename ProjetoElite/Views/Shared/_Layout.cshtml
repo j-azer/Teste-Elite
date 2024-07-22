@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:lightgray">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Projeto Elite</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -26,13 +26,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Upload Exel" asp-action="Create">Upload</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Upload" asp-action="Create">Upload Excel</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Disciplina" asp-action="Index">Disciplina</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gerênciamento Arquivos" asp-action="Index">Arquivo</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Arquivo" asp-action="Index">Gerênciamento Arquivo</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
