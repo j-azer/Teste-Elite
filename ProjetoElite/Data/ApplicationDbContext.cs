@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Projeto_Elite.Models;
+using System.IO;
 
 namespace Projeto_Elite.Data
 {
@@ -32,7 +33,9 @@ namespace Projeto_Elite.Data
                 .WithMany(d => d.AlunoDisciplinas)
                 .HasForeignKey(ad => ad.DisciplinaId);
         }
-        public DbSet<Projeto_Elite.Models.Arquivo> Arquivo { get; set; } = default!;
+
+        public DbSet<Arquivo> Arquivo { get; set; }
+        //public DbSet<Projeto_Elite.Models.Arquivo> Arquivo { get; set; } = default!;
 
     }
 }

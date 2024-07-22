@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Projeto_Elite.Data;
 using Projeto_Elite.Models;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+using System.IO;
 
 namespace Projeto_Elite.Controllers
 {
@@ -10,10 +14,12 @@ namespace Projeto_Elite.Controllers
     public class ArquivoController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ArquivoController(ApplicationDbContext context)
+        public ArquivoController(ApplicationDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: Arquivo
@@ -51,15 +57,37 @@ namespace Projeto_Elite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao")] Arquivo arquivo)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao")] Arquivo arquivo, IFormFile file)
         {
-            if (ModelState.IsValid)
-            {
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                //string fileName = Path.GetFileNameWithoutExtension(arquivo.Nome);
+                string[] fileSplit = file.FileName.Split(".");
+                arquivo.Nome = fileSplit[0] + DateTime.Now.ToString("yymmssfff") + "." +fileSplit[1];
+                string path = Path.Combine(wwwRootPath + "/Uploads/", arquivo.Nome);
+
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await file.CopyToAsync(fileStream);
+                }
+
+                arquivo.PathArquivo = "/Uploads/" + arquivo.Nome;
+
+                // Generate thumbnail
+                string thumbnailPath = Path.Combine(wwwRootPath + "/Thumbnails/", arquivo.Nome);
+                using (var image = SixLabors.ImageSharp.Image.Load(file.OpenReadStream()))
+                {
+                    image.Mutate(x => x.Resize(150, 150));
+                    image.Save(thumbnailPath);
+                }
+                // Thumbnail generation logic here
+
+                arquivo.PathThumbnail = "/Thumbnails/" + arquivo.Nome;
+                arquivo.DataUpload = DateTime.Now;
+
                 _context.Add(arquivo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            return View(arquivo);
+
         }
 
         // GET: Arquivo/Edit/5
