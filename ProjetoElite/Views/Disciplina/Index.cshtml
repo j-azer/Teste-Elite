@@ -10,10 +10,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                <h4>Nome</h4>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NomeProfessor)
+                <h4>Nome do Professor</h4>
             </th>
             <th></th>
         </tr>
@@ -22,13 +22,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                    @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
                     @Html.DisplayFor(modelItem => item.NomeProfessor)
             </td>
             <td>
-                    <a href="@Url.Action("Index", "Aluno", new { disciplinaId = item.Id })">Listagem Aluno</a>
+                    <a href="@Url.Action("Index", "Aluno", new { disciplinaId = item.Id })" class="btn btn-outline-secondary">Listagem Aluno</a>
             </td>
         </tr>
 }
