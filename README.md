@@ -1,6 +1,8 @@
 # Teste Elite - RN
 <h3>Como executar a aplicação</h3>
 
+<h3>Estrutura de Dados</h3>
+
 <h3>Descrição Geral</h3>
 
 Desenvolver uma aplicação web que autentique usuários (professores), permita o upload de arquivos Excel contendo notas de alunos, salve os dados no MSSQL Server e gerencie esses arquivos. A aplicação deve fornecer funcionalidades de visualização, incluindo cálculos de médias e estatísticas, além de funcionalidades adicionais para avaliação.
