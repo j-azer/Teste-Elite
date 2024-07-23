@@ -35,14 +35,14 @@ Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word
 <p>4. Execute o comando `dotnet run`.</p>
 
 <h3>Estrutura do Projeto</h3>
-<p>Controllers: Contém os controladores da aplicação.</p>
-<p>Models: Contém as classes de modelo.</p>
-<p>Views: Contém as views da aplicação.</p>
+<p><b>Controllers:</b> Contém os controladores da aplicação.</p>
+<p><b>Models:</b> Contém as classes de modelo.</p>
+<p><b>Views:</b> Contém as views da aplicação.</p>
 
 <h3>Tecnologias Utilizadas</h3>
-- ASP.NET Core MVC
-- Entity Framework Core
-- SQL Server
+<p>- ASP.NET Core MVC</p>
+<p>- Entity Framework Core</p>
+<p>- SQL Server</p>
 
 <h3>Estrutura de Dados</h3>
 
