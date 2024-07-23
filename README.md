@@ -29,8 +29,11 @@ Descrição: Apresentar o diagrama do banco de dados, diagrama de fluxo de dados
 Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word/Markdown
 
 <h3>Como Executar</h3>
-<p>1. Clone o repositório.</p>
-<p>2. Abra o projeto no Visual Studio.</p>
+<p>1. Para clonar o repositório acesse https://github.com/j-azer/Teste-Elite.git</p>
+<p>2. Para abrir o projeto no Visual Studio, após acessar, click em <b>Code</b> e escolha a opção de abrir com Visual Studio, conforme imagem ilustrativa abaixo.</p>
+
+
+
 <p>3. Configure a string de conexão no arquivo <b>appsettings.json</b> para conectar com seu banco de dados.</p>
 <p>4. No <b>wwwroot</b>, crie a pasta <b>Thumbnails</b> e a pasta <b>Uploads</b>.</p>
 <p>5. Execute o comando <b>Update-Database</b>.</p>
