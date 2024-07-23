@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Projeto_Elite.Controllers;
 
-//[Authorize]
+[Authorize]
 public class AlunoController : Controller
 {
     private readonly ApplicationDbContext _context;

@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Projeto_Elite.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ArquivoController : Controller
     {
         private readonly ApplicationDbContext _context;
