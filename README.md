@@ -35,6 +35,7 @@ Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word
 <p>4. No <b>wwwroot</b>, crie a pasta <b>Thumbnails</b> e a pasta <b>Uploads</b>.</p>
 <p>5. Execute o comando <b>Update-Database</b>.</p>
 <p>6. Execute o comando <b>dotnet run</b> ou <b>Crtl+F5</b> ou click no play do seu projeto. Abaixo imagem ilustrativa</p>
+![image](https://github.com/user-attachments/assets/7cb7b7f3-f2e4-4ff7-80d1-c9d716638035)
 
 
 <h3>Estrutura do Projeto</h3>
