@@ -34,7 +34,8 @@ Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word
 <p>3. Configure a string de conexão no arquivo <b>appsettings.json</b> para conectar com seu banco de dados.</p>
 <p>4. No <b>wwwroot</b>, crie a pasta <b>Thumbnails</b> e a pasta <b>Uploads</b>.</p>
 <p>5. Execute o comando <b>Update-Database</b>.</p>
-<p>6. Execute o comando <b>dotnet run</b> ou <b>Crtl+F5</b> ou click no play do seu projeto. Abaixo imagem ilustrativa</p>
+<p>6. Execute o comando <b>dotnet run</b> ou <b>Crtl+F5</b> ou click no play do seu projeto. Abaixo imagem ilustrativa.</p>
+
 ![Start_projeto](https://github.com/user-attachments/assets/f2845bc3-1149-4566-95ac-cd3ca8bacac6)
 
 
