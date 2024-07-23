@@ -3,6 +3,8 @@
 
 <h3>Estrutura de Dados</h3>
 
+![Diagrama_Elite](https://github.com/user-attachments/assets/31fa6f8b-d091-40c1-b4f6-3c7d9440cb2e)
+
 <h3>Descrição Geral</h3>
 
 Desenvolver uma aplicação web que autentique usuários (professores), permita o upload de arquivos Excel contendo notas de alunos, salve os dados no MSSQL Server e gerencie esses arquivos. A aplicação deve fornecer funcionalidades de visualização, incluindo cálculos de médias e estatísticas, além de funcionalidades adicionais para avaliação.
