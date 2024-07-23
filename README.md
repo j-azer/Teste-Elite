@@ -31,8 +31,11 @@ Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word
 <h3>Como Executar</h3>
 <p>1. Clone o repositório.</p>
 <p>2. Abra o projeto no Visual Studio.</p>
-<p>3. Configure a string de conexão no arquivo `appsettings.json`.</p>
-<p>4. Execute o comando `dotnet run`.</p>
+<p>3. Configure a string de conexão no arquivo <b>appsettings.json</b> para conectar com seu banco de dados.</p>
+<p>4. No <b>wwwroot</b>, crie a pasta <b>Thumbnails</b> e a pasta <b>Uploads</b>.</p>
+<p>5. Execute o comando <b>Update-Database</b>.</p>
+<p>6. Execute o comando <b>dotnet run</b> ou <b>Crtl+F5</b> ou click no play do seu projeto. Abaixo imagem ilustrativa</p>
+
 
 <h3>Estrutura do Projeto</h3>
 <p><b>Controllers:</b> Contém os controladores da aplicação.</p>
