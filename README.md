@@ -1,4 +1,5 @@
-# Teste Elite - RN
+![logoElite](https://github.com/user-attachments/assets/e7df54dc-4ced-4486-a615-f9c84293e552)
+# Teste
 <h3>Descrição Geral</h3>
 Desenvolver uma aplicação web que autentique usuários (professores), permita o upload de arquivos Excel contendo notas de alunos, salve os dados no MSSQL Server e gerencie esses arquivos. A aplicação deve fornecer funcionalidades de visualização, incluindo cálculos de médias e estatísticas, além de funcionalidades adicionais para avaliação.
 
