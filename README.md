@@ -29,17 +29,17 @@ Descrição: Apresentar o diagrama do banco de dados, diagrama de fluxo de dados
 Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word/Markdown
 
 <h3>Como Executar</h3>
-1. Clone o repositório.
-2. Abra o projeto no Visual Studio.
-3. Configure a string de conexão no arquivo `appsettings.json`.
-4. Execute o comando `dotnet run`.
+<p>1. Clone o repositório.</p>
+<p>2. Abra o projeto no Visual Studio.</p>
+<p>3. Configure a string de conexão no arquivo `appsettings.json`.</p>
+<p>4. Execute o comando `dotnet run`.</p>
 
 <h3>Estrutura do Projeto</h3>
-- **Controllers**: Contém os controladores da aplicação.
-- **Models**: Contém as classes de modelo.
-- **Views**: Contém as views da aplicação.
+<p>Controllers: Contém os controladores da aplicação.</p>
+<p>Models: Contém as classes de modelo.</p>
+<p>Views: Contém as views da aplicação.</p>
 
-<h3>Tecnologias Utilizadas,/h3>
+<h3>Tecnologias Utilizadas</h3>
 - ASP.NET Core MVC
 - Entity Framework Core
 - SQL Server
