@@ -32,11 +32,20 @@ Tecnologias: Ferramentas de modelagem de dados (e.g., ERD tools), Microsoft Word
 <p>1. Para clonar o repositório acesse https://github.com/j-azer/Teste-Elite.git</p>
 <p>2. Para abrir o projeto no Visual Studio, após acessar, click em <b>Code</b> e escolha a opção de abrir com Visual Studio, conforme imagem ilustrativa abaixo.</p>
 
-
+![abrirProjeto](https://github.com/user-attachments/assets/93c5f7be-15c1-4e60-8088-4157f74ea87b)
 
 <p>3. Configure a string de conexão no arquivo <b>appsettings.json</b> para conectar com seu banco de dados.</p>
+
+![appsettings](https://github.com/user-attachments/assets/99cecd8b-c301-4ec8-a372-71b36bfed77c)
+
 <p>4. No <b>wwwroot</b>, crie a pasta <b>Thumbnails</b> e a pasta <b>Uploads</b>.</p>
+
+![wwwroot](https://github.com/user-attachments/assets/45535a36-353c-4f65-bdfb-4baa28652fe4)
+
 <p>5. Execute o comando <b>Update-Database</b>.</p>
+
+![update_database](https://github.com/user-attachments/assets/2973cc67-2366-40ab-a14c-93ebe44c4971)
+
 <p>6. Execute o comando <b>dotnet run</b> ou <b>Crtl+F5</b> ou click no play do seu projeto. Abaixo imagem ilustrativa.</p>
 
 ![Start_projeto](https://github.com/user-attachments/assets/f2845bc3-1149-4566-95ac-cd3ca8bacac6)
