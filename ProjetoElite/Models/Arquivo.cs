@@ -8,5 +8,4 @@ public class Arquivo
     public string PathThumbnail { get; set; }
     public string Descricao { get; set; }
     public DateTime DataUpload { get; set; }
-
 }

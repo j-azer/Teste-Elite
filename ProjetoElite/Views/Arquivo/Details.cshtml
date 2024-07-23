@@ -7,20 +7,39 @@
 <h1>Detalhes do Arquivo</h1>
 
 <div>
-    <h4>Arquivo</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
+            Nome
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
+            Descrição
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            Data Upload
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataUpload)
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            Upload
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.Upload
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            Download
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.Download
         </dd>
     </dl>
 </div>

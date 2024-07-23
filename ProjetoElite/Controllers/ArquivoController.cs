@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DocumentFormat.OpenXml.Drawing;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -24,8 +25,8 @@ namespace Projeto_Elite.Controllers
 
         // GET: Arquivo
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.Arquivo.ToListAsync());
+        {            
+            return View(await _context.Arquivos.ToListAsync());
         }
 
         // GET: Arquivo/Details
@@ -36,12 +37,15 @@ namespace Projeto_Elite.Controllers
                 return NotFound();
             }
 
-            var arquivo = await _context.Arquivo
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var arquivo = await _context.Arquivos.FirstOrDefaultAsync(m => m.Id == id);
             if (arquivo == null)
             {
                 return NotFound();
             }
+
+            ViewBag.Upload = await _context.Auditorias.CountAsync(m => m.Identificador == id && m.Acao == "upload");
+
+            ViewBag.Download = await _context.Auditorias.CountAsync(m => m.Identificador == id && m.Acao == "download");
 
             return View(arquivo);
         }
@@ -60,7 +64,7 @@ namespace Projeto_Elite.Controllers
                 string wwwRootPath = _hostEnvironment.WebRootPath;
                 string[] fileSplit = file.FileName.Split(".");
                 arquivo.Nome = fileSplit[0] + DateTime.Now.ToString("yymmssfff") + "." + fileSplit[1];
-                string path = Path.Combine(wwwRootPath + "/Uploads/", arquivo.Nome);
+                string path = System.IO.Path.Combine(wwwRootPath + "/Uploads/", arquivo.Nome);
 
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
@@ -70,7 +74,7 @@ namespace Projeto_Elite.Controllers
                 arquivo.PathArquivo = "/Uploads/" + arquivo.Nome;
 
                 // Generate thumbnail
-                string thumbnailPath = Path.Combine(wwwRootPath + "/Thumbnails/", arquivo.Nome);
+                string thumbnailPath = System.IO.Path.Combine(wwwRootPath + "/Thumbnails/", arquivo.Nome);
                 using (var image = SixLabors.ImageSharp.Image.Load(file.OpenReadStream()))
                 {
                     image.Mutate(x => x.Resize(150, 150));
@@ -80,8 +84,18 @@ namespace Projeto_Elite.Controllers
 
                 arquivo.PathThumbnail = "/Thumbnails/" + arquivo.Nome;
                 arquivo.DataUpload = DateTime.Now;
+                            
+                _context.Arquivos.Add(arquivo);
+                _context.SaveChanges();
 
-                _context.Add(arquivo);
+                var auditoria = new Auditoria
+                {
+                    Identificador = arquivo.Id,
+                    Acao = "upload",
+                    DataCriacao = DateTime.Now
+                };
+
+                _context.Auditorias.Add(auditoria);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
 
@@ -95,7 +109,7 @@ namespace Projeto_Elite.Controllers
                 return NotFound();
             }
 
-            var arquivo = await _context.Arquivo.FindAsync(id);
+            var arquivo = await _context.Arquivos.FindAsync(id);
             if (arquivo == null)
             {
                 return NotFound();
@@ -115,7 +129,7 @@ namespace Projeto_Elite.Controllers
 
                 try
                 {
-                    var arquivoOriginal = await _context.Arquivo.FindAsync(id);
+                    var arquivoOriginal = await _context.Arquivos.FindAsync(id);
                     arquivoOriginal.Descricao = arquivo.Descricao;
                     _context.Update(arquivoOriginal);
                     await _context.SaveChangesAsync();
@@ -142,7 +156,7 @@ namespace Projeto_Elite.Controllers
                 return NotFound();
             }
 
-            var arquivo = await _context.Arquivo
+            var arquivo = await _context.Arquivos
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (arquivo == null)
             {
@@ -157,10 +171,10 @@ namespace Projeto_Elite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var arquivo = await _context.Arquivo.FindAsync(id);
+            var arquivo = await _context.Arquivos.FindAsync(id);
             if (arquivo != null)
             {
-                _context.Arquivo.Remove(arquivo);
+                _context.Arquivos.Remove(arquivo);
             }
 
             await _context.SaveChangesAsync();
@@ -169,7 +183,24 @@ namespace Projeto_Elite.Controllers
 
         private bool ArquivoExists(int id)
         {
-            return _context.Arquivo.Any(e => e.Id == id);
+            return _context.Arquivos.Any(e => e.Id == id);
         }
+
+        public async Task<FileResult> Download(int id)
+        {
+            var arquivo = await _context.Arquivos.FindAsync(id);
+            var auditoria = new Auditoria
+            {
+                Identificador = arquivo.Id,
+                Acao = "download",
+                DataCriacao = DateTime.Now
+            };
+
+            _context.Auditorias.Add(auditoria);
+            await _context.SaveChangesAsync();
+
+            return File(arquivo.PathArquivo, "application/image", arquivo.Nome);
+        }
+
     }
 }

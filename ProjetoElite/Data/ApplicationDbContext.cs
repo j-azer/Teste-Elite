@@ -15,6 +15,8 @@ namespace Projeto_Elite.Data
         public DbSet<Disciplina> Disciplinas { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<AlunoDisciplina> AlunoDisciplinas { get; set; }
+        public DbSet<Arquivo> Arquivos { get; set; }
+        public DbSet<Auditoria> Auditorias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,8 +35,5 @@ namespace Projeto_Elite.Data
                 .WithMany(d => d.AlunoDisciplinas)
                 .HasForeignKey(ad => ad.DisciplinaId);
         }
-
-        public DbSet<Arquivo> Arquivo { get; set; }
-
     }
 }

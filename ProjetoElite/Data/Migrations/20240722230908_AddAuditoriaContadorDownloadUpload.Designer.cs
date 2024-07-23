@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Elite.Data;
 
@@ -11,9 +12,11 @@ using Projeto_Elite.Data;
 namespace Projeto_Elite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240722230908_AddAuditoriaContadorDownloadUpload")]
+    partial class AddAuditoriaContadorDownloadUpload
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -297,30 +300,7 @@ namespace Projeto_Elite.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Arquivos");
-                });
-
-            modelBuilder.Entity("Projeto_Elite.Models.Auditoria", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Acao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Identificador")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Auditorias");
+                    b.ToTable("Arquivo");
                 });
 
             modelBuilder.Entity("Projeto_Elite.Models.Disciplina", b =>
