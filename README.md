@@ -1,4 +1,5 @@
 # Teste Elite - RN
+<h3>Como executar a aplicação</h3>
 
 <h3>Descrição Geral</h3>
 
